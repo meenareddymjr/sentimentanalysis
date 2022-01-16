@@ -52,8 +52,8 @@ class CommentComponent extends React.Component{
     render (){
         return <div className="FlexStyles Comment">
             <div>
-            {this.state.comments.length>0 ? (this.state.sentimentReaction?<h5 style={{color:"white"}}>The final reaction: {this.state.sentimentReaction}</h5>:null):null}
-            {this.state.comments.length>0 && this.state.mostCommonWord ? (this.state.mostCommonWord!=null?<h6 style={{color:"white"}}>Most Repeated {this.state.sentimentReaction} comment: {this.state.mostCommonWord}</h6>:<h6>Check all comments as count of negative and positive comments are same</h6>):null}
+            {this.state.comments.length>0 ? (this.state.sentimentReaction?<h5 style={{color:"white"}}>Overall reaction: {this.state.sentimentReaction}</h5>:null):null}
+            {this.state.comments.length>0 && this.state.mostCommonWord ? (this.state.mostCommonWord!=null?<h6 style={{color:"white"}}>Most repeated {this.state.sentimentReaction} word: {this.state.mostCommonWord}</h6>:<h6>Check all comments as count of negative and positive comments are same</h6>):null}
             {this.state.comments.length>0 ? this.state.comments?.map((comment,i) => <li  key={i} style={{color:"white"}}>{comment}</li>): null}
             </div>
             <button style={{width:"10em"}} onClick={this.openTextbox}>Add Comment</button>
